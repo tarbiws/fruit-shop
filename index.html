@@ -14,7 +14,7 @@
 <body class="bg-[#2d4a22] text-gray-800 flex flex-col min-h-screen">
 
     <!-- Header / Navbar -->
-    <header class="bg-[#1b3014] text-white shadow-md">
+    <header class="bg-[#1b3014] text-white shadow-md sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center overflow-hidden border border-emerald-300">
@@ -30,9 +30,9 @@
                 </div>
             </div>
             <nav class="flex gap-6 text-sm font-medium">
-                <a href="#" class="text-emerald-400 border-b-2 border-emerald-400 pb-1">เมนูแนะนำ</a>
-                <a href="#" class="text-gray-300 hover:text-white transition">เมนูเพิ่มเติม</a>
-                <a href="#" class="text-gray-300 hover:text-white transition">โปรโมชั่น</a>
+                <a href="#featured" class="text-emerald-400 hover:text-emerald-300 transition">เมนูแนะนำ</a>
+                <a href="#all-menu" class="text-gray-300 hover:text-white transition">เมนูทั้งหมด</a>
+                <a href="#promotion" class="text-gray-300 hover:text-white transition">โปรโมชั่น</a>
             </nav>
         </div>
     </header>
@@ -40,47 +40,29 @@
     <!-- Main Content Container -->
     <main class="bg-gray-50 flex-grow space-y-8 pb-12">
 
-        <!-- Hero Section -->
-        <section class="relative py-12 px-6 border-b border-emerald-100 overflow-hidden">
-            <img src="assets/images/banner.jpg" 
-                 alt="แบนเนอร์ร้าน" 
-                 onerror="this.style.display='none';" 
-                 class="absolute inset-0 w-full h-full object-cover">
-            
-            <div class="absolute inset-0 bg-[#f3faf0]/85"></div>
-
-            <div class="relative max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 z-10">
-                <div class="space-y-4 max-w-lg">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                        สดจากสวน ทุกวัน<br>กับผลไม้คัดเกรดพรีเมียม
-                    </h2>
-                    <p class="text-gray-600 text-sm">
-                        ผลไม้สด สะอาด หวานอร่อย ราคานักเรียน
-                    </p>
-                    <button class="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm rounded-full font-medium transition shadow">
-                        ดูเมนูผลไม้
-                    </button>
-                </div>
-                <div class="flex gap-4">
-                    <img src="./assets/images/Orange.png" alt="ผลไม้ 1" onerror="this.src='https://via.placeholder.com/128x176?text=Fruit+1';" class="w-32 h-44 object-cover rounded-2xl shadow-lg">
-                    <img src="./assets/images/Watermelon.png" alt="ผลไม้ 2" onerror="this.src='https://via.placeholder.com/128x176?text=Fruit+2';" class="w-32 h-44 object-cover rounded-2xl shadow-lg">
-                </div>
+        <!-- Banner Section (ส่วนแสดงภาพแบนเนอร์ร้าน) -->
+        <section class="max-w-5xl mx-auto px-4 pt-6">
+            <div class="relative rounded-3xl overflow-hidden shadow-xl border border-emerald-100 bg-white">
+                <img src="./assets/images/banner.jpg" 
+                     alt="แบนเนอร์ร้านผลไม้" 
+                     onerror="this.src='https://via.placeholder.com/1200x600?text=Banner+Image';" 
+                     class="w-full h-auto object-cover block">
             </div>
         </section>
 
-        <div class="max-w-5xl mx-auto px-4 space-y-8">
+        <div class="max-w-5xl mx-auto px-4 space-y-10">
 
             <!-- Section 1: เมนูแนะนำ (Featured Menu) -->
-            <section class="space-y-4">
+            <section id="featured" class="space-y-4 pt-2">
                 <div class="text-center">
-                    <h2 class="text-xl font-bold text-gray-900">เมนูแนะนำ</h2>
-                    <p class="text-xs text-gray-500">ผลไม้สดและแปรรูปยอดนิยม</p>
+                    <h2 class="text-2xl font-bold text-gray-900">⭐ เมนูแนะนำยอดนิยม</h2>
+                    <p class="text-xs text-gray-500">ผลไม้คัดพิเศษที่ลูกค้าสั่งเยอะที่สุด</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Card 1 -->
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
-                        <img src="./assets/images/MangoFresh.png" alt="มะม่วงน้ำปลาหวาน" onerror="this.src='https://via.placeholder.com/96x112?text=Mango';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                    <!-- Mango -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/MangoFresh.png" alt="มะม่วงเปรี้ยว" onerror="this.src='https://via.placeholder.com/96x112?text=Mango';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
                         <div class="flex-grow space-y-1">
                             <h3 class="font-bold text-gray-800">มะม่วงเปรี้ยว น้ำปลาหวาน</h3>
                             <p class="text-xs text-gray-500">มะม่วงสดกรอบ น้ำปลาหวานเข้มข้น</p>
@@ -91,8 +73,8 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
+                    <!-- Durian -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
                         <img src="./assets/images/DurianFresh.png" alt="ทุเรียนหมอนทอง" onerror="this.src='https://via.placeholder.com/96x112?text=Durian';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
                         <div class="flex-grow space-y-1">
                             <h3 class="font-bold text-gray-800">ทุเรียนหมอนทองคัดเกรด</h3>
@@ -103,19 +85,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
 
-            <!-- Section 2: เมนูแนะนำเพิ่มเติม (Additional Menu) -->
-            <section class="bg-emerald-50 p-6 rounded-3xl space-y-4 border border-emerald-100">
-                <div class="text-center">
-                    <h2 class="text-xl font-bold text-gray-900">เมนูแนะนำเพิ่มเติม</h2>
-                    <p class="text-xs text-gray-500">อีก 2 เมนูที่น่าสนใจ</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Card 3 -->
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
+                    <!-- Fruit Salad -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
                         <img src="./assets/images/FruitSalad.png" alt="สลัดผลไม้รวม" onerror="this.src='https://via.placeholder.com/96x112?text=Fruit+Salad';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
                         <div class="flex-grow space-y-1">
                             <h3 class="font-bold text-gray-800">สลัดผลไม้รวมโยเกิร์ต</h3>
@@ -127,9 +99,9 @@
                         </div>
                     </div>
 
-                    <!-- Card 4 -->
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
-                        <img src="./assets/images/Watermelon.png" alt="แตงโมสดฉ่ำ" onerror="this.src='https://via.placeholder.com/96x112?text=Watermelon';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                    <!-- Watermelon -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/Watermelon.png" alt="แตงโมสด" onerror="this.src='https://via.placeholder.com/96x112?text=Watermelon';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
                         <div class="flex-grow space-y-1">
                             <h3 class="font-bold text-gray-800">แตงโมสดหวานฉ่ำ</h3>
                             <p class="text-xs text-gray-500">เย็นฉ่ำ ชื่นใจ หวานธรรมชาติ</p>
@@ -142,11 +114,125 @@
                 </div>
             </section>
 
+            <!-- Section 2: เมนูผลไม้สดทั้งหมด (All Fruit Items) -->
+            <section id="all-menu" class="bg-emerald-50/60 p-6 rounded-3xl space-y-6 border border-emerald-100">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-gray-900">🍎 ผลไม้สดประจำร้าน</h2>
+                    <p class="text-xs text-gray-500">รายการผลไม้สดคุณภาพดี พร้อมเสิร์ฟทุกวัน</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                    <!-- Avocado -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/AvocadoFresh.png" alt="อะโวคาโด" onerror="this.src='https://via.placeholder.com/96x112?text=Avocado';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow space-y-1">
+                            <h3 class="font-bold text-gray-800">อะโวคาโดสดพรีเมียม</h3>
+                            <p class="text-xs text-gray-500">เนื้อเหนียวนุ่ม หอมมัน เหมาะสำหรับสายสุขภาพ</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-emerald-700 font-bold">฿70</span>
+                                <a href="./assets/docs/AvocadoFresh.pdf" target="_blank" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs rounded-lg transition">เปิดดูไฟล์</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coconut -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/Coconut.png" alt="มะพร้าว" onerror="this.src='https://via.placeholder.com/96x112?text=Coconut';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow space-y-1">
+                            <h3 class="font-bold text-gray-800">มะพร้าวน้ำหอมสด</h3>
+                            <p class="text-xs text-gray-500">น้ำหวานหอมอมหวาน เนื้อมะพร้าวอ่อนกำลังดี</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-emerald-700 font-bold">฿40</span>
+                                <a href="./assets/docs/Coconut.pdf" target="_blank" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs rounded-lg transition">เปิดดูไฟล์</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grapes -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/Grapes.png" alt="องุ่น" onerror="this.src='https://via.placeholder.com/96x112?text=Grapes';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow space-y-1">
+                            <h3 class="font-bold text-gray-800">องุ่นไร้เมล็ดหวานกรอบ</h3>
+                            <p class="text-xs text-gray-500">คัดลูกโต สดกรอบ หวานฉ่ำทุกคำ</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-emerald-700 font-bold">฿80</span>
+                                <a href="./assets/docs/Grapes.pdf" target="_blank" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs rounded-lg transition">เปิดดูไฟล์</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kiwi -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/KiwiFresh.png" alt="กีวี่" onerror="this.src='https://via.placeholder.com/96x112?text=Kiwi';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow space-y-1">
+                            <h3 class="font-bold text-gray-800">กีวี่สดนำเข้า</h3>
+                            <p class="text-xs text-gray-500">รสชาติเปรี้ยวอมหวาน วิตามินซีสูง</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-emerald-700 font-bold">฿65</span>
+                                <a href="./assets/docs/KiwiFresh.pdf" target="_blank" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs rounded-lg transition">เปิดดูไฟล์</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mangosteen -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/Mangosteen.png" alt="มังคุด" onerror="this.src='https://via.placeholder.com/96x112?text=Mangosteen';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow space-y-1">
+                            <h3 class="font-bold text-gray-800">มังคุดคัดเกรด (ราชินีผลไม้)</h3>
+                            <p class="text-xs text-gray-500">เนื้อขาวปูม หวานอมเปรี้ยว อร่อยกลมกล่อม</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-emerald-700 font-bold">฿90</span>
+                                <a href="./assets/docs/Mangosteen.pdf" target="_blank" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs rounded-lg transition">เปิดดูไฟล์</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orange -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/Orange.png" alt="ส้มสายน้ำผึ้ง" onerror="this.src='https://via.placeholder.com/96x112?text=Orange';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow space-y-1">
+                            <h3 class="font-bold text-gray-800">ส้มสายน้ำผึ้งสด</h3>
+                            <p class="text-xs text-gray-500">รสหวานฉ่ำ เปลือกบาง แกะง่าย</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-emerald-700 font-bold">฿50</span>
+                                <a href="./assets/docs/Orange.pdf" target="_blank" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs rounded-lg transition">เปิดดูไฟล์</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pineapple -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/Pineapple.png" alt="สับปะรด" onerror="this.src='https://via.placeholder.com/96x112?text=Pineapple';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow space-y-1">
+                            <h3 class="font-bold text-gray-800">สับปะรดภูแลหวานกรอบ</h3>
+                            <p class="text-xs text-gray-500">เนื้อเหลืองทอง กรอบหวาน ไม่คายลิ้น</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-emerald-700 font-bold">฿40</span>
+                                <a href="./assets/docs/Pineapple.pdf" target="_blank" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs rounded-lg transition">เปิดดูไฟล์</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strawberries -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
+                        <img src="./assets/images/Strawberries.png" alt="สตรอว์เบอร์รี" onerror="this.src='https://via.placeholder.com/96x112?text=Strawberries';" class="w-24 h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow space-y-1">
+                            <h3 class="font-bold text-gray-800">สตรอว์เบอร์รีสดฉ่ำ</h3>
+                            <p class="text-xs text-gray-500">ผลใหญ่ สีแดงสด หอมหวานอมเปรี้ยว</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-emerald-700 font-bold">฿85</span>
+                                <a href="./assets/docs/Strawberries.pdf" target="_blank" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs rounded-lg transition">เปิดดูไฟล์</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Section 3: Promotion Banner -->
-            <section class="bg-gradient-to-r from-emerald-100 via-lime-50 to-emerald-100 p-6 rounded-2xl border border-emerald-200 text-center space-y-2">
+            <section id="promotion" class="bg-gradient-to-r from-emerald-100 via-lime-50 to-emerald-100 p-6 rounded-2xl border border-emerald-200 text-center space-y-2 shadow-sm">
                 <h3 class="text-xl font-bold text-emerald-600">🎉 โปรโมชั่นพิเศษ! 🎉</h3>
                 <p class="text-lg font-semibold text-gray-800">ซื้อผลไม้สดครบ 100 บาท แถมฟรีน้ำผลไม้ปั่น 1 แก้ว</p>
-                <p class="text-xs text-gray-500">ตั้งแต่วันนี้ - 31 ธันวาคม 2566</p>
+                <p class="text-xs text-gray-500">ตั้งแต่วันนี้ - 31 ธันวาคม 2569</p>
             </section>
 
         </div>
